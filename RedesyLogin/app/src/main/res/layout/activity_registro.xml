@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ingrese su nombre de usuario"
+        android:id="@+id/tagNombreR"
+        android:layout_gravity="center_horizontal"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/editNombreR"
+        android:layout_below="@+id/tagNombreR"
+        android:layout_alignLeft="@+id/tagNombreR"
+        android:layout_alignStart="@+id/tagNombreR"
+        android:layout_alignRight="@+id/tagNombreR"
+        android:layout_alignEnd="@+id/tagNombreR"
+        android:layout_gravity="center_horizontal" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ingrese su contraseña"
+        android:id="@+id/tagPassR"
+        android:layout_below="@+id/editNombreR"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center_horizontal" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:id="@+id/editPassR"
+        android:layout_below="@+id/tagPassR"
+        android:layout_centerHorizontal="true"
+        android:layout_alignEnd="@+id/tagNombreR"
+        android:layout_alignStart="@+id/tagNombreR"
+        android:layout_gravity="center_horizontal" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="registrar"
+        android:id="@+id/botonRegistrar"
+        android:onClick="registrar"
+        android:layout_below="@+id/editPassR"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="56dp"
+        android:layout_gravity="center_horizontal" />
+
+</LinearLayout>

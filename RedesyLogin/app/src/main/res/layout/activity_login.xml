@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ingrese su nombre de usuario"
+        android:id="@+id/tagNombre"
+        android:layout_gravity="center_horizontal"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/editNombre"
+        android:layout_below="@+id/tagNombre"
+        android:layout_alignLeft="@+id/tagNombre"
+        android:layout_alignStart="@+id/tagNombre"
+        android:layout_alignRight="@+id/tagNombre"
+        android:layout_alignEnd="@+id/tagNombre" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ingrese su contraseña"
+        android:id="@+id/tagPass"
+        android:layout_below="@+id/editNombre"
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:id="@+id/editPass"
+        android:layout_below="@+id/tagPass"
+        android:layout_centerHorizontal="true"
+        android:layout_alignEnd="@+id/tagNombre"
+        android:layout_alignStart="@+id/tagNombre" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ingresar"
+        android:id="@+id/botonIngresar"
+        android:layout_below="@+id/editPass"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="29dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="registrar"
+        android:onClick="abrirRegistrar"
+        android:id="@+id/button"
+        android:layout_below="@+id/botonIngresar"
+        android:layout_centerHorizontal="true" />
+
+</RelativeLayout>

@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "755826291610",
+    "project_id": "loginsocial-720b3"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:755826291610:android:c2310927a0de3c12",
+        "android_client_info": {
+          "package_name": "com.example.pguti.loginsocial"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "755826291610-ipruii6dbntq0co2khcmpvugk8nfd2ad.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.pguti.loginsocial",
+            "certificate_hash": "27F9EA9BD24C03A3AE23F8082F55BBEBC0F0A9D4"
+          }
+        },
+        {
+          "client_id": "755826291610-c8l1ctgb8q340uu1s1iadbcql4f6dena.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC9SSNKQ6091FHN8RNbmn53qDuqEiqYoes"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
