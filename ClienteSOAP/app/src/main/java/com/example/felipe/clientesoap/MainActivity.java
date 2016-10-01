@@ -32,34 +32,17 @@ public class MainActivity extends AppCompatActivity {
     private String URL="http://www.webservicex.net/periodictable.asmx";
     private String METHOD_NAME = "GetAtomicNumber";
     private String SOAP_ACTION = "http://www.webserviceX.NET/GetAtomicNumber";
+    private String elemento;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
 
         this.textoResultado = (TextView) findViewById(R.id.textoResultado);
 
-        //http://webservicex.net/New/Home/ServiceDetail/19
-        //http://www.webservicex.net/periodictable.asmx/GetAtomicNumber
-        //http://www.sgoliver.net/blog/acceso-a-servicios-web-soap-en-android-22/
-        //http://www.sgoliver.net/blog/acceso-a-servicios-web-rest-en-android-22/
-        //http://www.sgoliver.net/blog/interfaz-de-usuario-en-android-controles-de-seleccion-i/
-        //https://github.com/FelipeUFRO15/TareasAndroid.git
-        /**
         this.elementos = new String[]{"Hidrógeno", "Helio", "Litio", "Berilio", "Boro", "Carbono", "Nitrogeno", "Oxígeno", "Flúor", "Neón"};
-        ArrayAdapter<String> adaptador = new ArrayAdapter<String>(this, R.layout.content_main, elementos);
+        ArrayAdapter<String> adaptador = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, elementos);
 
         this.spinnerElementos = (Spinner) findViewById(R.id.spinnerElementos);
         adaptador.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -69,39 +52,37 @@ public class MainActivity extends AppCompatActivity {
                 new AdapterView.OnItemSelectedListener() {
                     public void onItemSelected(AdapterView<?> parent,
                                                android.view.View v, int position, long id) {
-                        Toast.makeText(getApplicationContext(), "Elemento: " + parent.getItemAtPosition(position), Toast.LENGTH_SHORT).show();
+                        switch (position) {
+                            case 0: elemento = "Hydrogen";
+                                    break;
+                            case 1: elemento = "Helium";
+                                    break;
+                            case 2: elemento = "Lithium";
+                                    break;
+                            case 3: elemento = "Beryllium";
+                                    break;
+                            case 4: elemento = "Boron";
+                                    break;
+                            case 5: elemento = "Carbon";
+                                    break;
+                            case 6: elemento = "Nitrogen";
+                                    break;
+                            case 7: elemento = "Oxygen";
+                                    break;
+                            case 8: elemento = "Flourine";
+                                //Debería ser Fluorine, web service tiene nombre incorrecto
+                                    break;
+                            case 9: elemento = "Neon";
+                                    break;
+                        }
+                        if(obtenerRespuesta()) textoResultado.setText("Datos del elemento seleccionado:\n\n" + resultado);
+                        else textoResultado.setText("Datos del elemento seleccionado:\nSin respuesta");
                     }
 
                     public void onNothingSelected(AdapterView<?> parent) {
                         //
                     }
                 });
-         */
-
-        if(obtenerRespuesta()) this.textoResultado.setText(this.resultado);
-        else this.textoResultado.setText("Sin respuesta");
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
     }
 
     public boolean obtenerRespuesta(){
@@ -112,7 +93,7 @@ public class MainActivity extends AppCompatActivity {
             }
 
             SoapObject request = new SoapObject(this.NAMESPACE, this.METHOD_NAME);
-            request.addProperty("ElementName", "Helium");
+            request.addProperty("ElementName", this.elemento);
 
             SoapSerializationEnvelope envelope = new SoapSerializationEnvelope(SoapEnvelope.VER11);
             envelope.dotNet = true;

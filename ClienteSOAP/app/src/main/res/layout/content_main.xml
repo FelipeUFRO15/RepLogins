@@ -13,16 +13,18 @@
     tools:context="com.example.felipe.clientesoap.MainActivity"
     tools:showIn="@layout/activity_main">
 
-    <!--Spinner
+    <Spinner
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/spinnerElementos"
         android:layout_gravity="center_horizontal"
         android:spinnerMode="dropdown"
-        android:text="Elementos periódicos"/-->
+        android:text="Elementos periódicos"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/textoResultado"/>
+        android:id="@+id/textoResultado"
+        android:layout_marginTop="30dp"
+        android:text="Datos del elemento seleccionado:"/>
 </LinearLayout>
