@@ -1,0 +1,30 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<ion-view view-title="Dashboard">
+  <ion-content class="padding">
+    <h2>Tarea Android Ionic</h2>
+    <b>Tabla de contactos:</b>
+    <table class="table" class="col-sm-20">
+      <thead>
+        <tr class="warning">
+          <th>Imagen</th>
+          <th>ID</th>
+          <th>Nombre</th>
+          <th>Mensajes</th>
+        </tr>
+      </thead>
+
+      <tbody ng-repeat="chat in chats" type="item-text-wrap" href="#/tab/chats/{{chat.id}}">
+        <tr class="success">
+          <td><img ng-src="{{chat.face}}" style="width: 64px; height: 64px"></td>
+          <td>{{chat.id}}</td>
+          <td>{{chat.name}}</td>
+          <td>{{chat.lastText}}</td>
+        </tr>
+      </tbody>
+    </table>
+
+  </ion-content>
+</ion-view>

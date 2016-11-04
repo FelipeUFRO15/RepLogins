@@ -1,0 +1,24 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<ion-view view-title="Account">
+  <ion-content>
+    <h2>Tarea Android Ionic</h2>
+    <b>Grid de contactos:</b>
+    <ion-list>
+    	<div class="row">
+			<div class="col-xs-20 col-md-20 col-lg-3" style="background-color:lightblue; border:1px solid white">Imagen</div>
+			<div class="col-xs-20 col-md-20 col-lg-3" style="background-color:lightblue; border:1px solid white">ID</div>
+			<div class="col-xs-20 col-md-20 col-lg-3" style="background-color:lightblue; border:1px solid white">Nombre</div>
+			<div class="col-xs-20 col-md-20 col-lg-3" style="background-color:lightblue; border:1px solid white">Mensajes</div>
+		</div>  
+    	<div class="row"  ng-repeat="chat in chats" type="item-text-wrap" href="#/tab/chats/{{chat.id}}">
+			<div class="col-xs-20 col-md-20 col-lg-3" style="background-color:lavender; border:1px solid white"><img ng-src="{{chat.face}}" style="width: 32px; height: 32px"></div>
+			<div class="col-xs-20 col-md-20 col-lg-3" style="background-color:lightgreen; border:1px solid white"><td>{{chat.id}}</td></div>
+			<div class="col-xs-20 col-md-20 col-lg-3" style="background-color:lightblue; border:1px solid white">{{chat.name}}</div>
+			<div class="col-xs-20 col-md-20 col-lg-3" style="background-color:lightyellow; border:1px solid white">{{chat.lastText}}</div>
+		</div>    
+    </ion-list>
+  </ion-content>
+</ion-view>
